@@ -1,5 +1,5 @@
 /* 
-  Styling the section hero
+  Fixing the header and menu navigation bar
 */
 
 /* #region normalize */
@@ -187,6 +187,8 @@ template {
   --section-body-padding: 0 0 3rem;
   --section-footer-padding: 3rem 0 0;
   --section-footer-align: center;
+  --section-tagline-margin: 0;
+
   --footer-padding: 5rem 0 1rem;
 
   --nav-item-font-family: var(--font-family-title);
@@ -196,8 +198,6 @@ template {
   --nav-item-display: inline-block;
   --nav-item-margin: 0 0 3rem 0;
   --nav-item-link-hover: var(--color-primary);
-
-  --section-tagline-margin: 0;
 
   --button-display: inline-block;
   --button-padding: 1.5rem 3rem;
@@ -234,21 +234,6 @@ body {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
-}
-
-.header {
-  padding: var(--header-padding);
-}
-
-.haeder-logo {
-  position: var(--header-logo-position);
-}
-
-.haeder-logo a {
-  display: var(--header-logo-link-display);
-  position: var(--header-logo-link-position);
-  top: var(--header-logo-link-top);
-  left: var(--header-logo-link-left);
 }
 
 h1,
@@ -326,7 +311,54 @@ a:active {
   display: none;
 }
 
+.header {
+  padding: var(--header-padding);
+}
+
+.header-logo {
+  position: var(--header-logo-position);
+}
+
+.header-logo a {
+  display: var(--header-logo-link-display);
+  position: var(--header-logo-link-position);
+  top: var(--header-logo-link-top);
+  left: var(--header-logo-link-left);
+}
+
 .card-category {
+  color: var(--color-primary);
+}
+
+.card-services .card-title {
+  margin: 0;
+}
+
+.card-services a {
+  display: block;
+  padding: 2rem;
+  background-color: var(--color-light-grey);
+}
+
+.card-services a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.card-testimonial {
+  text-align: center;
+}
+
+.card-testimonial .card-avatar {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.card-testimonial .card-quote cite {
+  display: block;
+  padding-top: 1rem;
   color: var(--color-primary);
 }
 
@@ -364,22 +396,6 @@ a:active {
   margin: var(--section-tagline-margin);
 }
 
-.card-testimonial {
-  text-align: center;
-}
-
-.card-testimonial .card-avatar {
-  border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
-}
-
-.card-testimonial .card-quote cite {
-  display: block;
-  padding-top: 1rem;
-  color: var(--color-primary);
-}
-
 .section-hero {
   background-size: 90rem auto;
 }
@@ -390,16 +406,6 @@ a:active {
 
 .section-hero .section-inner {
   padding: 10rem 40rem 2rem 0;
-}
-
-.container {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer {
-  padding: var(--footer-padding);
 }
 
 ul.row {
@@ -421,17 +427,17 @@ ul.row {
   padding: 0.5rem;
 }
 
+.row::after {
+  content: none;
+  display: table;
+  clear: both;
+}
+
 [data-section-theme="dark"] {
   --text-color: var(--color-white);
   --section-title-color: var(--color-white);
-  --button-color: var(--color-white);
   background-color: var(--color-black);
-}
-
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
+  --button-color: var(--color-white);
 }
 
 .social-link {
@@ -442,22 +448,6 @@ ul.row {
   fill: var(--text-color);
 }
 
-.card-services .card-title {
-  margin: 0;
-}
-
-.card-services a {
-  display: block;
-  padding: 2rem;
-  background-color: var(--color-light-grey);
-}
-
-.card-services a:hover {
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  text-decoration: none;
-}
-
 .footer-copyright {
   margin: 0;
   font-size: var(--font-size-small);
@@ -466,6 +456,16 @@ ul.row {
 
 .footer ul {
   text-align: right;
+}
+
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  padding: var(--footer-padding);
 }
 
 .footer-address {
